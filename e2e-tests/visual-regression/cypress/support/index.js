@@ -17,5 +17,10 @@ import "gatsby-cypress"
 import { addMatchImageSnapshotCommand } from "cypress-image-snapshot/command"
 
 addMatchImageSnapshotCommand({
-  customDiffDir: `/__diff_output__`,
+    customDiffDir: `/__diff_output__`,
+    customDiffConfig: {
+        threshold: 0.05
+    },
+    failureThreshold: 0.01,
+    failureThresholdType: `percent`
 })
